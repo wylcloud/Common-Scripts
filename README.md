@@ -19,6 +19,10 @@ lsmod | grep bbr
 
 wget -N --no-check-certificate https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh && chmod +x AutoTrace.sh && bash AutoTrace.sh
 
+测速脚本:
+
+bash <(curl -Lso- https://bench.im/hyperspeed)
+
 流媒体测试脚本:
 
 bash <(curl -L -s check.unlock.media)
