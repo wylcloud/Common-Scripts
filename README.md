@@ -15,7 +15,7 @@ sysctl net.ipv4.tcp_available_congestion_control
 
 lsmod | grep bbr
 
-网络测试脚本:
+网络测试脚本(回程):
 
 wget -N --no-check-certificate https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh && chmod +x AutoTrace.sh && bash AutoTrace.sh
 
