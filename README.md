@@ -51,6 +51,12 @@ wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash men
 ```javascript copy
 curl ip.p3terx.com
 ```
+## **设置时区**
+
+```javascript copy
+timedatectl set-timezone Asia/Shanghai
+```
+
 
 ## **acme生成免费证书:**
 
