@@ -5,6 +5,11 @@
 ```javascript copy
 wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 12 -pwd '密码'
 ```
+## **DD网络重装脚本：moeclue**
+
+```javascript copy
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 12 -v 64 -p 密码 -port 端口 -a -firmware --mirror 'https://mirrors.cloud.tencent.com/debian/'
+```
 
 ## **BBR脚本:**
 
