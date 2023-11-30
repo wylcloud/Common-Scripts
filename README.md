@@ -50,7 +50,7 @@ curl -sSL https://get.docker.com/ | sh
 ## **cloudflare warp脚本 添加IPv4/IPv6网络:**
 
 ```javascript copy
-wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh
 ```
 
 ## **测试 IPv4 优先还是 IPv6 优先:**
