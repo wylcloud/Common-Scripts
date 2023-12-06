@@ -58,6 +58,10 @@ wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh
 ```javascript copy
 curl ip.p3terx.com
 ```
+## IPv4 优先
+```javascript copy
+grep -qE '^[ ]*precedence[ ]*::ffff:0:0/96[ ]*100' /etc/gai.conf || echo 'precedence ::ffff:0:0/96  100' | sudo tee -a /etc/gai.conf
+```
 ## **设置时区**
 
 ```javascript copy
