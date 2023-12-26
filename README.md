@@ -46,7 +46,9 @@ bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/insta
 ```javascript copy
 curl -sSL https://get.docker.com/ | sh
 ```
-
+```javascript copy
+docker run -d -p 6688:80 ilemonrain/html5-speedtest:latest
+```
 ## **cloudflare warp脚本 添加IPv4/IPv6网络:**
 
 ```javascript copy
