@@ -40,7 +40,9 @@ bash <(curl -L -s check.unlock.media)
 ```javascript copy
 bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh)
 ```
-
+```javascript copy
+bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+```
 ## **Docker:**
 
 ```javascript copy
