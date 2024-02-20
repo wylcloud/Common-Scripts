@@ -34,6 +34,9 @@ bash <(curl -Lso- https://bench.im/hyperspeed)
 ```javascript copy
 bash <(curl -L -s check.unlock.media)
 ```
+```javascript copy
+bash <(curl -L -s media.ispvps.com)
+```
 
 ## **X-:**
 
