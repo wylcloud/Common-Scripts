@@ -60,6 +60,10 @@ docker run -d -p 6688:80 ilemonrain/html5-speedtest:latest
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh
 ```
 
+## **为 IPv6 Only VPS 启用 IPv4 支持**
+```javascript copy
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh 4
+```
 ## **测试 IPv4 优先还是 IPv6 优先:**
 
 ```javascript copy
