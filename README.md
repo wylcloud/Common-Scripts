@@ -64,6 +64,9 @@ wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh
 ```javascript copy
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh 4
 ```
+```javascript copy
+bash <(curl -fsSL git.io/warp.sh) 4
+```
 ## **测试 IPv4 优先还是 IPv6 优先:**
 
 ```javascript copy
