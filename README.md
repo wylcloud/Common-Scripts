@@ -28,6 +28,16 @@ echo "net.ipv6.conf.all.forwarding=1" >> /etc/sysctl.conf
 sysctl -p /etc/sysctl.conf
 ```
 
+
+
+```javascript copy
+//# nft add table ip nat
+nft -- add chain inet filter prerouting { type nat hook prerouting priority dstnat - 5 \; }
+nft add rule ip nat prerouting tcp dport 8022 redirect to :22
+
+```
+
+
 ## **网络测试脚本(回程):**
 
 ```javascript copy
