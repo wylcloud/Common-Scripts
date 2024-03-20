@@ -19,6 +19,14 @@ bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeCl
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf && echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf && sysctl -p && sysctl net.ipv4.tcp_available_congestion_control && lsmod | grep bbr
 ```
 
+```javascript copy
+echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
+```
+
+```javascript copy
+sysctl -p /etc/sysctl.conf
+```
+
 ## **网络测试脚本(回程):**
 
 ```javascript copy
