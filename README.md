@@ -33,7 +33,8 @@ sysctl -p /etc/sysctl.conf
 ```javascript copy
 //# nft add table ip nat
 nft -- add chain inet filter prerouting { type nat hook prerouting priority dstnat - 5 \; }
-nft add rule ip nat prerouting tcp dport 8022 redirect to :22
+nft add rule inet filter prerouting tcp dport 30001-35000 redirect to :30000
+nft add rule inet filter prerouting udp dport 30001-35000 redirect to :30000
 
 ```
 
