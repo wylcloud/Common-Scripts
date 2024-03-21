@@ -35,18 +35,25 @@ sysctl -p /etc/sysctl.conf
 //systemctl restart nftables
 //nano /etc/nftables.conf
 //# nft add table ip nat
+
+//添加转发到外部ip的端口
 //nft -- add chain inet filter prerouting { type nat hook prerouting priority -100 \; }
 //nft add chain inet filter postrouting { type nat hook postrouting priority 100 \; }
 //nft add rule inet filter postrouting ip6 daddr [2403:xx] masquerade
 //nft add rule inet filter prerouting tcp dport 30000-40000 dnat ip6 to [2403:xx]:20000
 //nft add rule inet filter prerouting udp dport 30000-40000 dnat ip6 to [2403:xx]:20000
+//不同写法：（声明ip6）
+//nft add rule inet filter prerouting ip6 daddr [::] tcp dport 30000-40000 dnat to [::]:20000
+//得到结果：ip6 daddr :: tcp dport 30000-40000 dnat ip6 to [2403:xx]:20000
 
 
+//添加转发到本机的端口
 nft -- add chain inet filter prerouting { type nat hook prerouting priority dstnat - 5 \; }
 nft add rule inet filter prerouting tcp dport 30001-35000 redirect to :30000
 nft add rule inet filter prerouting udp dport 30001-35000 redirect to :30000
 
-nft add rule inet filter prerouting ip6 daddr [::] tcp dport 30000-40000 dnat to [::]:20000
+
+
 
 ```
 
