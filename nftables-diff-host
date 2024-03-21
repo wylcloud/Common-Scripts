@@ -20,10 +20,13 @@ table inet filter {
 		type nat hook prerouting priority dstnat; policy accept;
 		tcp dport 30000-40000 dnat ip6 to [2403:xx]:20000
 		udp dport 30000-40000 dnat ip6 to [2403:xx]:20000
+		#ip6 daddr :: tcp dport 30000-40000 dnat ip6 to [2403:xx]:20000
+
 	}
 
 	chain postrouting {
 		type nat hook postrouting priority srcnat; policy accept;
 		ip6 daddr 2403:xx masquerade
+		#nft add rule inet filter postrouting ip6 daddr [2403:xx] masquerade
 	}
 }
