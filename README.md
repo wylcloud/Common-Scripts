@@ -73,6 +73,10 @@ deb-src https://mirrors.ustc.edu.cn/debian-security/ bullseye-security main cont
 EOF
 ```
 
+```javascript copy
+sudo sed -i 's/http:\/\/deb.debian.org\/debian/https:\/\/mirrors.tuna.tsinghua.edu.cn\/debian/g' /etc/apt/sources.list
+```
+
 ## **网络测试脚本(回程):**
 
 ```javascript copy
