@@ -89,6 +89,7 @@ supersede dhcp6.name-servers 2400:3200::1, 2400:3200:baba::1;
 ```
 //设置静态v4v6
 ```javascript copy
+nano nano /etc/network/interfaces
 
 auto enp1s0
 iface enp1s0 inet static
