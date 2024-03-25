@@ -77,7 +77,10 @@ EOF
 
 sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 ```
-
+//开机自动更改dns，有些主机服务商每次重启自动更改dns
+```javascript copy
+@reboot echo "nameserver 2400:3200::1\nnameserver 2400:3200:baba::1" > /etc/resolv.conf
+```
 ## **网络测试脚本(回程):**
 
 ```javascript copy
