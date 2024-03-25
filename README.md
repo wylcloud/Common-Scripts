@@ -74,7 +74,8 @@ EOF
 ```
 
 ```javascript copy
-sudo sed -i 's/http:\/\/deb.debian.org\/debian/https:\/\/mirrors.tuna.tsinghua.edu.cn\/debian/g' /etc/apt/sources.list
+
+sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 ```
 
 ## **网络测试脚本(回程):**
