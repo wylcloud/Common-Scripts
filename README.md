@@ -92,18 +92,18 @@ supersede dhcp6.name-servers 2400:3200::1, 2400:3200:baba::1;
 
 auto enp1s0
 iface enp1s0 inet static
-    address 192.168.1.2          # 你想要分配的静态IPv4地址
-    netmask 255.255.255.0          # IPv4子网掩码
-    gateway 192.168.1.1            # IPv4网关地址
+    address 192.168.1.2
+    netmask 255.255.255.0
+    gateway 192.168.1.1
 
     # IPv6静态配置
     iface enp1s0 inet6 static
-        address 2400:xx:xx:xx::xx   # 你想要分配的静态IPv6地址
-        netmask 64                         # IPv6子网前缀长度
-        gateway fe80::1                    # IPv6网关地址
+        address 2400:xx:xx:xx::xx
+        netmask 64
+        gateway fe80::1
 
-    dns-nameservers 223.5.5.5 223.6.6.6          # IPv4 DNS服务器地址
-    dns-nameservers 2400:3200::1 2400:3200:baba::1  # IPv6 DNS服务器地址
+    dns-nameservers 223.5.5.5 223.6.6.6
+    dns-nameservers 2400:3200::1 2400:3200:baba::1
 
 ```
 ## **网络测试脚本(回程):**
