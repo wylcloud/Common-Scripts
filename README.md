@@ -56,7 +56,22 @@ nft add rule inet filter prerouting udp dport 30001-35000 redirect to :30000
 
 
 ```
+## **国内机换apt源（Debian 11）:**
+```javascript copy
+cat > /etc/apt/sources.list << EOF
+deb https://mirrors.ustc.edu.cn/debian/ bullseye main contrib non-free
+deb-src https://mirrors.ustc.edu.cn/debian/ bullseye main contrib non-free
 
+deb https://mirrors.ustc.edu.cn/debian/ bullseye-updates main contrib non-free
+deb-src https://mirrors.ustc.edu.cn/debian/ bullseye-updates main contrib non-free
+
+deb https://mirrors.ustc.edu.cn/debian/ bullseye-backports main contrib non-free
+deb-src https://mirrors.ustc.edu.cn/debian/ bullseye-backports main contrib non-free
+
+deb https://mirrors.ustc.edu.cn/debian-security/ bullseye-security main contrib non-free
+deb-src https://mirrors.ustc.edu.cn/debian-security/ bullseye-security main contrib non-free
+EOF
+```
 
 ## **网络测试脚本(回程):**
 
