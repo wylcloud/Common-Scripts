@@ -81,6 +81,12 @@ sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 ```javascript copy
 @reboot echo -e "nameserver 2400:3200::1\nnameserver 2400:3200:baba::1" > /etc/resolv.conf
 ```
+
+```javascript copy
+nano /etc/dhcp/dhclient.conf
+supersede domain-name-servers 223.5.5.5, 223.6.6.6;
+supersede dhcp6.name-servers 2400:3200::1, 2400:3200:baba::1;
+```
 ## **网络测试脚本(回程):**
 
 ```javascript copy
