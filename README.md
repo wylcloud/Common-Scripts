@@ -96,11 +96,10 @@ iface enp1s0 inet static
     netmask 255.255.255.0
     gateway 192.168.1.1
 
-    # IPv6静态配置
-    iface enp1s0 inet6 static
-        address 2400:xx:xx:xx::xx
-        netmask 64
-        gateway fe80::1
+iface enp1s0 inet6 static
+    address 2400:xx:xx:xx::xx
+    netmask 64
+    gateway fe80::1
 
     dns-nameservers 223.5.5.5 223.6.6.6
     dns-nameservers 2400:3200::1 2400:3200:baba::1
