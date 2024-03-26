@@ -46,7 +46,7 @@ grep -o 'inet6 2409:[0-9a-fA-F:]\+/119' "$input_file" | sed 's/inet6 //' | sed '
 
 
     if curl --interface "$ipv6_address" --max-time 10 -s ipv6.ip.sb > /dev/null; then
-        echo "$ipv6_address"
+        echo "ip addr add $ipv6_address/64 dev eth0;"
     fi
     ((i++))
 done
