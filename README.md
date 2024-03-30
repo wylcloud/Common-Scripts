@@ -12,7 +12,9 @@ bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeCl
 
 bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -u 20.04 -v 64 -p 密码 -port 端口 -a -firmware --mirror  'http://archive.ubuntu.com/ubuntu'
 ```
-
+```javascript copy
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 12 -v 64 -p 密码 -port 端口 -a -firmware --mirror 'http://mirrors.ustc.edu.cn/debian'
+```
 ## **BBR脚本:**
 
 ```javascript copy
