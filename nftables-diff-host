@@ -4,29 +4,32 @@ flush ruleset
 
 
 table inet filter {
-	chain input {
-		type filter hook input priority filter; policy accept;
-	}
+        chain input {
+                type filter hook input priority filter; policy accept;
+        }
 
-	chain forward {
-		type filter hook forward priority filter; policy accept;
-	}
+        chain forward {
+                type filter hook forward priority filter; policy accept;
+        }
 
-	chain output {
-		type filter hook output priority filter; policy accept;
-	}
+        chain output {
+                type filter hook output priority filter; policy accept;
+        }
 
-	chain prerouting {
-		type nat hook prerouting priority dstnat; policy accept;
-		tcp dport 30000-40000 dnat ip6 to [2403:xx]:20000
-		udp dport 30000-40000 dnat ip6 to [2403:xx]:20000
-		#ip6 daddr :: tcp dport 30000-40000 dnat ip6 to [2403:xx]:20000
+        chain prerouting {
+                type nat hook prerouting priority dstnat; policy accept;
+                tcp dport 22222 dnat ip6 to [xx]:20000
+                udp dport 22222 dnat ip6 to [xx]:20000
+                tcp dport 33333 dnat ip to 27.:66
+                udp dport 33333 dnat ip to 27.:66
+                #ip6 daddr :: tcp dport 30000-40000 dnat ip6 to [xx]:20000
 
-	}
+        }
 
-	chain postrouting {
-		type nat hook postrouting priority srcnat; policy accept;
-		ip6 daddr 2403:xx masquerade
-		#nft add rule inet filter postrouting ip6 daddr [2403:xx] masquerade
-	}
+        chain postrouting {
+                type nat hook postrouting priority srcnat; policy accept;
+                ip6 daddr xx masquerade
+                ip daddr 27. masquerade
+                #nft add rule inet filter postrouting ip6 daddr [xx] masquerade
+        }
 }
