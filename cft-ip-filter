@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# 输入文件和输出文件名
+input_file="ip-range"
+output_file="ip-output.txt"
+final_file="aws-cft-ip.txt"
+
+# 检查是否安装了 jq 和 curl 工具
+if ! command -v jq &> /dev/null || ! command -v curl &> /dev/null; then
+    echo "请先安装 jq 和 curl 工具。"
+    exit 1
+fi
+
+# 创建输出文件
+#echo "" > "$output_file"
+wget -qO- https://ip-ranges.amazonaws.com/ip-ranges.json | jq -c '.prefixes[] | select(.service == "CLOUDFRONT")' > "$input_file"
+# 逐行读取输入文件中的每个 IP 地址范围，并转换成单个 IP 地址后查询地理位置信息
+while IFS= read -r line; do
+    # 提取当前行中的 IP 地址范围（假设 IP 地址范围位于 "ip_prefix" 字段）
+    ip_prefix=$(echo "$line" | jq -r '.ip_prefix')
+
+    # 如果提取的 IP 地址范围不为空，则进行处理
+    if [[ -n "$ip_prefix" ]]; then
+        # 提取 IP 地址范围的起始 IP 地址（假设 IP 地址范围格式为 "x.x.x.x/y"）
+        start_ip=$(echo "$ip_prefix" | cut -d'/' -f1)
+
+        # 查询起始 IP 地址的地理位置信息并追加到输出文件中
+        curl -sS "ipinfo.io/$start_ip" | jq -r '"\(.ip) \(.country) \(.region) \(.city)"' >> "$output_file"
+    fi
+done < "$input_file"
+
+echo "查询完成。查询结果已保存到 $output_file。"
+
+input_file="ip-output.txt"
+output_file="matched_ips.txt"
+ip_range_file="ip-range"
+
+
+# 创建输出文件并清空内容
+echo "" > "$output_file"
+
+# 逐行读取输入文件中的每一行
+while IFS= read -r line; do
+    # 检查当前行是否包含 "CN"，如果包含则跳过该行
+    if [ -z "$line" ]; then
+        continue
+    fi
+    country=$(echo "$line" | awk '{print $2}')
+    echo "$country"
+    if [ "$country" == CN ]; then
+    echo "剔除"
+        continue  # 如果包含 "CN"，则跳过当前行
+    fi
+
+    # 提取当前行中的 IP 地址
+    ip_address=$(echo "$line" | awk '{print $1}')
+
+    # 在 ip-range 文件中查找匹配的 IP 段信息
+    matched_entry=$(jq -c --arg ip "$ip_address" 'select(.ip_prefix | contains($ip))' "$ip_range_file")
+
+    # 如果找到匹配的条目，则提取对应的 IP 段信息并追加到输出文件中
+    if [[ -n "$matched_entry" ]]; then
+        matched_ip_prefix=$(echo "$matched_entry" | jq -r '.ip_prefix')
+        echo "$matched_ip_prefix" >> "$output_file"
+    fi
+done < "$input_file"
+
+echo "查询完成。匹配的原始 IP 段已保存到 $output_file。"
+
+
