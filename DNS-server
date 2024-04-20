@@ -1,3 +1,17 @@
+Ali-DNS
+223.5.5.5
+223.6.6.6
+
+2400:3200::1
+2400:3200:baba::1
+
+DOT:
+dns.alidns.com
+DOH:
+https://dns.alidns.com/dns-query
+https://223.5.5.5/dns-query
+
+
 Google:
 8.8.8.8
 8.8.4.4
@@ -44,6 +58,7 @@ Quad9:
 
 HTTPS
 https://dns.quad9.net/dns-query
+https://9.9.9.9/dns-query
 
 TLS
 tls://dns.quad9.net
@@ -60,3 +75,6 @@ dot.sb
 DOH:
 https://doh.dns.sb/dns-query
 https://doh.sb/dns-query
+https://45.11.45.11/dns-query
+https://185.222.222.222/dns-query
+https://hk-hkg.doh.sb/dns-query
