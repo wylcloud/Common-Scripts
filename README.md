@@ -107,6 +107,9 @@ sed -i 's|security.debian.org/debian-security|mirrors.ustc.edu.cn/debian-securit
 ```javascript copy
 @reboot echo -e "nameserver 2400:3200::1\nnameserver 2400:3200:baba::1" > /etc/resolv.conf
 ```
+```javascript copy
+@reboot sleep 0.5 && echo "nameserver 45.11.45.11\nnameserver 9.9.9.9\nnameserver 208.67.220.222" > /etc/resolv.conf
+```
 //设置dns
 ```javascript copy
 nano /etc/dhcp/dhclient.conf
