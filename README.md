@@ -105,6 +105,9 @@ sed -i 's|security.debian.org/debian-security|mirrors.ustc.edu.cn/debian-securit
 ```
 //开机自动更改dns，有些主机服务商每次重启自动更改dns
 ```javascript copy
+chattr +i /etc/resolv.conf
+```
+```javascript copy
 @reboot echo -e "nameserver 2400:3200::1\nnameserver 2400:3200:baba::1" > /etc/resolv.conf
 ```
 ```javascript copy
