@@ -3,14 +3,14 @@
 ## **DD网络重装脚本：系统默认为debian12  leitbogioro**
 
 ```javascript copy
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -timezone "Asia/Shanghai" -swap "512" -debian 11 -pwd '密码'
+wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -timezone "Asia/Shanghai" -swap "512" -debian 11 -port 22 -pwd '密码'
 ```
 
 ```javascript copy
-wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 12 -pwd '密码'
+wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 12 -port 22 -pwd '密码'
 ```
 ```javascript copy
-bash <(curl -sSL https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh) -timezone "Asia/Shanghai" -swap "512"  -debian 12 -pwd '密码'
+bash <(curl -sSL https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh) -timezone "Asia/Shanghai" -swap "512"  -debian 12 -port 22 -pwd '密码'
 ```
 ## **DD网络重装脚本：moeclue**
 
