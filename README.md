@@ -33,6 +33,10 @@ echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf && echo "net.ipv6.conf.all.fo
 ```
 
 ```javascript copy
+echo "net.ipv4.icmp_echo_ignore_all = 1" >> /etc/sysctl.conf && sysctl -p
+```
+
+```javascript copy
 sysctl -p /etc/sysctl.conf
 ```
 
