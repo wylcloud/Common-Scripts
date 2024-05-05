@@ -64,8 +64,8 @@ nft -- add chain inet filter prerouting { type nat hook prerouting priority dstn
 nft add rule inet filter prerouting tcp dport 30001-35000 redirect to :30000
 nft add rule inet filter prerouting udp dport 30001-35000 redirect to :30000
 
-
-
+//禁用某端口
+nft add rule inet filter input tcp dport 9999 drop
 
 ```
 ## **国内机换apt源（Debian 11）:**
