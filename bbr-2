@@ -1,3 +1,7 @@
+#nano /etc/sysctl.conf
+#sysctl -p /etc/sysctl.conf
+
+
 # ------ 网络调优: 基本 ------
 # TTL 配置, Linux 默认 64
 # net.ipv4.ip_default_ttl=64
