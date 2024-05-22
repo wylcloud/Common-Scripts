@@ -168,7 +168,6 @@ vm.overcommit_memory=1
 # Fix error: too many open files
 fs.file-max=1048575
 fs.inotify.max_user_instances=8192
-fs.inotify.max_user_instances=8192
 # 内核响应魔术键
 kernel.sysrq=1
 # 弃用
