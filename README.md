@@ -67,6 +67,8 @@ nft add rule inet filter prerouting udp dport 30001-35000 redirect to :30000
 //禁用某端口
 nft add rule inet filter input tcp dport 9999 drop
 
+//临时禁用ipv6
+echo 1 >/proc/sys/net/ipv6/conf/all/disable_ipv6
 ```
 ## **国内机换apt源（Debian 11）:**
 ```javascript copy
