@@ -39,8 +39,9 @@ echo "net.ipv4.icmp_echo_ignore_all = 1" >> /etc/sysctl.conf && sysctl -p
 ```javascript copy
 sysctl -p /etc/sysctl.conf
 ```
-
-
+```javascript copy
+wget http://sh.nekoneko.cloud/tools.sh -O tools.sh && bash tools.sh
+```
 
 ```javascript copy
 //nft list ruleset
@@ -70,6 +71,8 @@ nft add rule inet filter input tcp dport 9999 drop
 //临时禁用ipv6
 echo 1 >/proc/sys/net/ipv6/conf/all/disable_ipv6
 ```
+
+
 ## **国内机换apt源（Debian 11）:**
 ```javascript copy
 cat > /etc/apt/sources.list << EOF
