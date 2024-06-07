@@ -1,0 +1,30 @@
+net.ipv4.tcp_no_metrics_save=1
+net.ipv4.tcp_ecn=0
+net.ipv4.tcp_frto=0
+#net.ipv4.tcp_frto=2
+net.ipv4.tcp_mtu_probing=0
+net.ipv4.tcp_rfc1337=0
+net.ipv4.tcp_sack=1
+net.ipv4.tcp_fack=1
+net.ipv4.tcp_window_scaling=1
+net.ipv4.tcp_adv_win_scale=-2
+net.ipv4.tcp_moderate_rcvbuf=1
+net.core.wmem_default=2500000
+net.core.rmem_default=2500000
+net.core.rmem_max=18800000
+net.core.wmem_max=18800000
+net.ipv4.tcp_rmem=8192 2500000 18800000
+#net.ipv4.tcp_wmem=4096 16384 536870912
+#net.ipv4.tcp_rmem=8192 2130000 536870912
+net.ipv4.tcp_wmem=4096 2500000 18800000
+net.ipv4.udp_rmem_min=8192
+net.ipv4.udp_wmem_min=8192
+
+#net.ipv4.tcp_retries2 = 8
+#net.ipv4.tcp_retries1 = 3
+#net.ipv4.tcp_syn_retries = 3
+#net.ipv4.tcp_synack_retries = 3
+
+
+net.core.default_qdisc=fq
+net.ipv4.tcp_congestion_control=bbr
