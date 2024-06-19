@@ -33,3 +33,6 @@ table inet filter {
                 #nft add rule inet filter postrouting ip6 daddr [xx] masquerade
         }
 }
+
+#net.ipv4.ip_forward = 1
+#net.ipv6.conf.all.forwarding = 1
